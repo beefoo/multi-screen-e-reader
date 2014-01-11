@@ -10,11 +10,11 @@ body {
 	color:white;
 }
 #page01 {
-	background:url("images/page01.jpg");
+	background:url("../images/page01.jpg");
 }
 #page02 {
-	background:url("images/page02.jpg");
+	background:url("../images/page02.jpg");
 }
 #page03 {
-	background:url("images/page03.jpg");
+	background:url("../images/page03.jpg");
 }
