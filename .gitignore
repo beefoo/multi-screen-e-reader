@@ -1,1 +1,8 @@
 ./node_modules
+# for vim temp files
+*~
+*.swp
+*.swo
+
+# OSX
+.DS_Store
