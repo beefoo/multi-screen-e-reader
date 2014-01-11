@@ -29,14 +29,9 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
-    socket.on('start', function (data) {
+    socket.on('pageChange', function (data) {
         console.log(data);
-    });
-    socket.on('pageTurn', function (data) {
-        console.log(data);
-        socket.emit('data', {
-            pageNumber: data.pageNumber
-        });
+        socket.emit('pageChange', {"pageNumber": data.pageNumber});
     });
     socket.on('invokeQuiz', function (data) {
         console.log(data);

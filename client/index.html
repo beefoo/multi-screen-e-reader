@@ -13,20 +13,41 @@
 </head>
 
 <body>
-    <div class="page" id="page01">
-        <p class="sentence" id="sentence01"></p>
-        <p class="sentence" id="sentence01"></p>
-        <p class="sentence" id="sentence01"></p>
+    <div class="container" id="pages">
+        <div class="row">
+            <div class="page col-md-6" id="page01">
+                <p class="sentence" id="sentence01"></p>
+                <p class="sentence" id="sentence01"></p>
+                <p class="sentence" id="sentence01"></p>
+            </div>
+            <div class="page col-md-6" id="page02">
+                <p class="sentence" id="sentence01"></p>
+                <p class="sentence" id="sentence01"></p>
+                <p class="sentence" id="sentence01"></p>
+            </div>
+            <div class="page col-md-6" id="page03">
+                <p class="sentence" id="sentence01"></p>
+                <p class="sentence" id="sentence01"></p>
+                <p class="sentence" id="sentence01"></p>
+            </div>
+        </div>
     </div>
-    <div class="page" id="page02">
-        <p class="sentence" id="sentence01"></p>
-        <p class="sentence" id="sentence01"></p>
-        <p class="sentence" id="sentence01"></p>
-    </div>
-    <div class="page" id="page03">
-        <p class="sentence" id="sentence01"></p>
-        <p class="sentence" id="sentence01"></p>
-        <p class="sentence" id="sentence01"></p>
+    <div class="container pagebtns">
+        <div class="row">
+            <div class="col-md-1 lastPage">
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-left">
+                    </span> Last
+                </button>
+            </div>
+            <div class="col-md-9"></div>
+            <div class="col-md-1 nextPage">
+                <button type="button" class="btn btn-default">Next 
+                    <span class="glyphicon glyphicon-chevron-right">
+                    </span>
+                </button>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="client/js/jquery.js"></script>
     <script type="text/javascript" src="client/js/bootstrap.min.js"></script>
