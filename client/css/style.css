@@ -59,6 +59,10 @@ body{
 	background:url("../images/page05.jpg");
     display:none;
 }
+#page06 {
+	background:url("../images/page06.jpg");
+    display:none;
+}
 .sentence {
     color:#000;   
 }
