@@ -15,6 +15,9 @@ body{
 .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
   outline: none;
 }
+.col-md-6 {
+  float: left;
+}
 
 
 #wrapper{
