@@ -44,6 +44,7 @@ $(function(){
         $(".nextPage").css("visibility", "hidden");
         $(".lastPage").css("visibility", "hidden");
         $(".sentence").css("visibility", "hidden");
+        $("#pages").addClass('viewer');
     });
     $("#readBtn").bind("click", function(ev) {
         view = "reader";
@@ -97,6 +98,7 @@ $(function(){
     // Word in the text button clicks
     ///////////////////////////////////////////////////
     $(".nounclick").bind("click", function(ev) {
+        ev.preventDefault();
         if(view == "reader"){
             socket.emit('invokeQuiz', {'pageNumber':state});   
         }
@@ -106,6 +108,7 @@ $(function(){
     // next and last button clicks
     ///////////////////////////////////////////////////
     $(".nextPage").bind("click", function(ev) {
+        ev.preventDefault();
         state++;
         console.log(state);
         // change the viewer page
@@ -113,6 +116,7 @@ $(function(){
         socket.emit('pageChange', {"pageNumber":state});
     });
     $(".lastPage").bind("click", function(ev) {
+        ev.preventDefault();
         state--;
         methods.changePage( state );
         socket.emit('pageChange', {"pageNumber":state});
@@ -195,6 +199,7 @@ $(function(){
                     // correct answer
                     socket.emit('quizFinished', {'success':true});
                     $('#yellowQuizModal').modal('toggle');
+                    $('#page01').addClass('success');
                 }else{
                     // incorrect answer
                     socket.emit('quizFinished', {'success':false});
@@ -206,6 +211,7 @@ $(function(){
                     // correct answer
                     socket.emit('quizFinished', {'success':true});
                     $('#houseQuizModal').modal('toggle');
+                    $('#page02').addClass('success');
                 }else{
                     // incorrect answer
                     socket.emit('quizFinished', {'success':false});
@@ -217,6 +223,7 @@ $(function(){
                     // correct answer
                     socket.emit('quizFinished', {'success':true});
                     $('#greenQuizModal').modal('toggle');
+                    $('#page03').addClass('success');
                 }else{
                     // incorrect answer
                     socket.emit('quizFinished', {'success':false});
@@ -228,6 +235,7 @@ $(function(){
                     // correct answer
                     socket.emit('quizFinished', {'success':true});
                     $('#grassQuizModal').modal('toggle');
+                    $('#page04').addClass('success');
                 }else{
                     // incorrect answer
                     socket.emit('quizFinished', {'success':false});

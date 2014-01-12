@@ -7,7 +7,7 @@
     <link href="client/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="client/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="client/css/animate.css" />
+    <link rel="stylesheet" href="client/css/animate-custom.css" />
     <link rel="stylesheet" href="client/css/style.css" />
     <meta name="viewport" content="width=600, height=800" />
 </head>
@@ -29,32 +29,53 @@
                 <div class="page col-md-6" id="cover">
                 </div>
                 <div class="page col-md-6" id="page01">
+                    <div class="imageContainer">
+                      <img src="client/images/page01/1.png" id="page01-1" class="page01" />
+                      <img src="client/images/page01/2.png" id="page01-2" class="page01" />
+                      <img src="client/images/page01/3.png" id="page01-3" class="page01" />
+                    </div>
                     <div class="container sContainer">
+                      
                         <p class="sentence" id="sentence01">Little Blue has a lot of friends. Little Orange, Little Green, Little Purple and Little Red. But his very best friend is Little
                             <a href="#" class="nounclick">Yellow</a> who lives across the street.</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page02">
+                  <div class="imageContainer"><img src="client/images/page02/1.png" id="page02-1" class="page02" /></div>
                     <div class="container sContainer">
+                      
                         <p class="sentence" id="sentence01">Little Blue and Little Yellow like playing in the park, on the school playground and in their back yards. Their favourite game is hide and seek. One day Little Blue was left alone at <a href="#" class="nounclick">home</a>. He went across the street but Yellow's house was empty. Mother Yellow was out, Father Yellow was out and even Little Yellow was not home.</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page03">
+                   <div class="imageContainer"><img src="client/images/page03/1.png" id="page03-1" class="page03" /></div>
                     <div class="container sContainer">
+                      
                         <p class="sentence" id="sentence01">Little Blue searched and searched when suddenly Little Yellow came around the corner. Little Yellow had been out looking for Little Blue as well. They shared a hug, and another one, and another one. Until both Little Yellow and Little Blue were one Big <a href="#" class="nounclick">Green</a>!</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page04">
+                   <div class="imageContainer"><img src="client/images/page04/1.png" id="page04-1" class="page02" /></div>
                     <div class="container sContainer">
+                      
                         <p class="sentence" id="sentence01">Big Green went home to Mother and Father Blue. But they said: You are green as grass, you are not our Little Blue. Big Green went home to Mother and Father Yellow. But they said: You are green as <a href="#" class="nounclick">grass</a>, you not our Little Yellow.</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page05">
+                   <div class="imageContainer"><img src="client/images/page05/1.png" id="page05-1" class="page05" />
+                      <img src="client/images/page05/2.png" id="page05-2" class="page05" />
+                      <img src="client/images/page05/3.png" id="page05-3" class="page05" /></div>
                     <div class="container sContainer">
-                        <p class="sentence" id="sentence01">Big Green was so so sad. It cried blue en yellow tears. Big Green cried and cried until there was nothing but tears. The tears melted together. Little Blue and Little Yellow were back to normal. Their parents welcomes them back home. Little blue and Little Yellow explained what happened they all hugged each other.</p>
+                      
+                      <p class="sentence" id="sentence01">Big Green was so so sad. It cried blue en yellow tears. Big Green cried and cried until there was nothing but tears. The tears melted together. Little Blue and Little Yellow were back to normal. Their parents welcomes them back home. Little blue and Little Yellow explained what happened they all hugged each other.</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page06">
+                  <div class="imageContainer">
+                      <img src="client/images/page01/1.png" id="page01-1" class="page01" />
+                      <img src="client/images/page01/2.png" id="page01-2" class="page01" />
+                      <img src="client/images/page01/3.png" id="page01-3" class="page01" />
+                    </div>
                     <div class="container sContainer">
                         <p class="sentence" id="sentence01">The End.</p>
                     </div>
@@ -79,11 +100,10 @@
                     <h4 class="modal-title">Device View Type</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Will this device be the reader or viewer?</p>
-                </div>
-                <div class="modal-footer">
-                    <button id="viewBtn" type="button" class="btn btn-default" data-dismiss="modal">Viewer</button>
-                    <button id="readBtn" type="button" class="btn btn-primary" data-dismiss="modal">Reader</button>
+                    <div class="btn-group btn-group-lg">
+                      <button id="viewBtn" type="button" class="btn btn-lg btn-default" data-dismiss="modal">Viewer</button>
+                      <button id="readBtn" type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Reader</button>
+                    </div>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -99,10 +119,10 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
                 </div>
-                <div class="modal-body">
-                    <p class="quizitem" id="yellow"><img src="client/images/yellow-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="orange"><img src="client/images/orange-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="red"><img src="client/images/red-word.jpg" width="200"/></p>
+                <div class="modal-body words">
+                    <p class="quizitem" id="yellow">Yellow</p>
+                    <p class="quizitem" id="orange">Orange</p>
+                    <p class="quizitem" id="red">Red</p>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -119,9 +139,9 @@
                     <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
                 </div>
                 <div class="modal-body">
-                    <p class="quizitem" id="car"><img src="client/images/car-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="tree"><img src="client/images/tree-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="house"><img src="client/images/house-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="car"><img src="client/images/quiz02/car.png" /></p>
+                    <p class="quizitem" id="tree"><img src="client/images/quiz02/tree.png" /></p>
+                    <p class="quizitem" id="house"><img src="client/images/quiz02/house.png" /></p>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -137,10 +157,10 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
                 </div>
-                <div class="modal-body">
-                    <p class="quizitem" id="pink"><img src="client/images/pink-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="green"><img src="client/images/green-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="black"><img src="client/images/black-word.jpg" width="200"/></p>
+                <div class="modal-body words">
+                    <p class="quizitem" id="pink">Pink</p>
+                    <p class="quizitem" id="green">Green</p>
+                    <p class="quizitem" id="black">Black</p>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -157,9 +177,9 @@
                     <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
                 </div>
                 <div class="modal-body">
-                    <p class="quizitem" id="bugs"><img src="client/images/bugs-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="grass"><img src="client/images/grass-word.jpg" width="200"/></p>
-                    <p class="quizitem" id="sun"><img src="client/images/sun-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="bugs"><img src="client/images/quiz04/bug.png" /></p>
+                    <p class="quizitem" id="grass"><img src="client/images//quiz04/grass.png" /></p>
+                    <p class="quizitem" id="sun"><img src="client/images/quiz04/sun.png" /></p>
                 </div>
             </div>
             <!-- /.modal-content -->

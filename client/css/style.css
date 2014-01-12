@@ -2,10 +2,21 @@ html{
     height:100%;    
 }
 body{
-	background:url('http://www.diaryofaninja.com/asset/blogimages/7c399b32-bd0e-41e5-a6de-ab0b1023f2ed_WoodBackground_thumb_2.png');
-    background-size:cover;
-    background-repeat:no-repeat;
+	background:url('../images/wood_pattern.png');
+  background-repeat: repeat;
 }
+
+.btn-link {
+  color: #555;
+}
+.btn-link:hover {
+  color: #888;  
+}
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+  outline: none;
+}
+
+
 #wrapper{
    width:800px;
     margin-top:20px;
@@ -14,65 +25,199 @@ body{
     float:left;
     width:600px;
     display:block;
-    box-shadow:0px 2px 2px 2px;
 }
 .container{
     margin:0 auto;
     height:800px;
 }
-#cover {
-	background:url("../images/cover.jpg");
-     display:none;
-}
 .page {
-    display:block;
-	width:600px;
-	height:800px;
-	color:white;
-    margin:0;
-    padding:0;
+  display:block;
+  width:600px;
+  height:800px;
+  color:white;
+  margin:0;
+  padding:0;
+  background: white;
+  position: relative;
+}
+#cover {
+	background: url("../images/cover.jpg") #000 center top no-repeat;
+	background-size: 100% auto;
+  display:none;
 }
 .pgbtn{
-    float:left;
-    height:800px;
-    width:50px;
-    box-shadow:2px;
+  float:left;
+  height:800px;
+  width:50px;
+  font-size: 3em;
+  outline: none;
+}
+.lastPage {
+  margin-right: 20px;
 }
 
 #page01 {
-	background:url("../images/page01.jpg");
-     display:none;
+  display:none;
 }
 #page02 {
-	background:url("../images/page02.jpg");
-    display:none;
+  display:none;
 }
 #page03 {
-	background:url("../images/page03.jpg");
-    display:none;
+  display:none;
 }
 #page04 {
-	background:url("../images/page04.jpg");
-    display:none;
+  display:none;
 }
 #page05 {
-	background:url("../images/page05.jpg");
-    display:none;
+  display:none;
+}
+#page06 {
+  display: none;
+  text-align: center;
+  font-size: 4em;
 }
 .sentence {
-    color:#000;   
+  padding: 100px 0 0;
+  color: #333;
+  font-size: 2em;  
 }
-.sentence p {
-    padding:0px;   
+#page06 .sentence {
+  padding: 0;
 }
+.imageContainer {
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+}
+.viewer .imageContainer {
+  margin-top: 300px;
+}
+.imageContainer img:first-child {
+  -webkit-animation: bounce 2s infinite; /* Safari 4+ */
+  -moz-animation:    bounce 2s infinite; /* Fx 5+ */
+  -o-animation:      bounce 2s infinite; /* Opera 12+ */
+  animation:         bounce 2s infinite; /* IE 10+ */
+}
+.imageContainer img:nth-child(2) {
+  -webkit-animation: bounce 1s infinite; /* Safari 4+ */
+  -moz-animation:    bounce 1s infinite; /* Fx 5+ */
+  -o-animation:      bounce 1s infinite; /* Opera 12+ */
+  animation:         bounce 1s infinite; /* IE 10+ */
+}
+.imageContainer img:nth-child(3) {
+  -webkit-animation: bounce 3s infinite; /* Safari 4+ */
+  -moz-animation:    bounce 3s infinite; /* Fx 5+ */
+  -o-animation:      bounce 3s infinite; /* Opera 12+ */
+  animation:         bounce 3s infinite; /* IE 10+ */
+}
+.success .imageContainer img:first-child {
+  -webkit-animation: tada 2s infinite; /* Safari 4+ */
+  -moz-animation:    tada 2s infinite; /* Fx 5+ */
+  -o-animation:      tada 2s infinite; /* Opera 12+ */
+  animation:         tada 2s infinite; /* IE 10+ */
+}
+.success .imageContainer img:nth-child(2) {
+  -webkit-animation: tada 1s infinite; /* Safari 4+ */
+  -moz-animation:    tada 1s infinite; /* Fx 5+ */
+  -o-animation:      tada 1s infinite; /* Opera 12+ */
+  animation:         tada 1s infinite; /* IE 10+ */
+}
+.success .imageContainer img:nth-child(3) {
+  -webkit-animation: tada 3s infinite; /* Safari 4+ */
+  -moz-animation:    tada 3s infinite; /* Fx 5+ */
+  -o-animation:      tada 3s infinite; /* Opera 12+ */
+  animation:         tada 3s infinite; /* IE 10+ */
+}
+#page05 .imageContainer img:first-child {
+  margin-top: -100px;
+  -webkit-animation: shake 2s infinite; /* Safari 4+ */
+  -moz-animation:    shake 2s infinite; /* Fx 5+ */
+  -o-animation:      shake 2s infinite; /* Opera 12+ */
+  animation:         shake 2s infinite; /* IE 10+ */
+}
+#page05 .imageContainer img:nth-child(2){
+  margin-left: -150px;
+  margin-top: 200px;
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+#page05 .imageContainer img:nth-child(3){
+  -webkit-animation-name: fadeOutDown;
+  -moz-animation-name: fadeOutDown;
+  -o-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
 .sContainer {
-    position:absolute;
-    top:500px;
-    padding:20px;
-    word-wrap:break-word;
-    width:600px;
-    height:auto;
+  position: absolute;
+  top: 300px;
+  padding:20px;
+  word-wrap:break-word;
+  width: 600px;
+  height: auto;
 }
 .quizitem {
     margin:20px 0;
+}
+
+.modal-header,
+.modal-body {
+  text-align: center;
+}
+#myModal .btn-group-lg > .btn {
+  font-size: 3em;
+}
+.modal-title {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.quizitem {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.quizitem:hover {
+  cursor: pointer;
+  opacity: 1;
+  -webkit-animation: pulse 3s infinite; /* Safari 4+ */
+  -moz-animation:    pulse 3s infinite; /* Fx 5+ */
+  -o-animation:      pulse 3s infinite; /* Opera 12+ */
+  animation:         pulse 3s infinite; /* IE 10+ */
+}
+.words {
+  font-size: 6em;
+  text-align: center;
+  font-family: 'quirky__messyregular';
+}
+.words #yellow {
+  color: #ffd800; 
+}
+.words #orange {
+  color: #e57f2b;
+}
+.words #red {
+  color: #bc2f2f;
+}
+.words #pink {
+  color: #e54ba7; 
+}
+.words #green {
+  color: #53af1d;
+}
+.words #black {
+  color: #333;
+}
+
+@font-face {
+  font-family: 'quirky__messyregular';
+  src: url('../fonts/quirky__messy-webfont.eot');
+  src: url('../fonts/quirky__messy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/quirky__messy-webfont.woff') format('woff'),
+       url('../fonts/quirky__messy-webfont.ttf') format('truetype'),
+       url('../fonts/quirky__messy-webfont.svg#quirky__messyregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
