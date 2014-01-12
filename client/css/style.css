@@ -52,6 +52,13 @@ body{
   font-size: 3em;
   outline: none;
 }
+.pgAlert {
+    width:620px;
+    position:absolute;
+    margin-left:50px;
+    padding-left:20px;
+    z-index:1000;
+}
 .lastPage {
   margin-right: 20px;
 }
