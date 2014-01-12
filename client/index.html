@@ -13,10 +13,10 @@
 </head>
 
 <body>
-
+<div id="alertContainer"></div>
     <!-- Main Container for centering -->
     <div class="container" id="wrapper">
-
+        
         <!-- Last Page button -->
         <button type="button" class="btn btn-link lastPage pgbtn">
             <span class="glyphicon glyphicon-chevron-left">
@@ -31,27 +31,32 @@
                 <div class="page col-md-6" id="page01">
                     <div class="container sContainer">
                         <p class="sentence" id="sentence01">Little Blue has a lot of friends. Little Orange, Little Green, Little Purple and Little Red. But his very best friend is Little
-                            <a href="#" class="nounclick">Yellow</a>who lives across the street.</p>
+                            <a href="#" class="nounclick">Yellow</a> who lives across the street.</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page02">
                     <div class="container sContainer">
-                        <p class="sentence" id="sentence01">Little Blue and Little Yellow like playing in the park, on the school playground and in their back yards. Their favourite game is hide and seek. One day Little Blue was left alone at home. He went across the street but Yellow's house was empty. Mother Yellow was out, Father Yellow was out and even Little Yellow was not home.</p>
+                        <p class="sentence" id="sentence01">Little Blue and Little Yellow like playing in the park, on the school playground and in their back yards. Their favourite game is hide and seek. One day Little Blue was left alone at <a href="#" class="nounclick">home</a>. He went across the street but Yellow's house was empty. Mother Yellow was out, Father Yellow was out and even Little Yellow was not home.</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page03">
                     <div class="container sContainer">
-                        <p class="sentence" id="sentence01">Little Blue searched and searched when suddenly Little Yellow came around the corner. Little Yellow had been out looking for Little Blue as well. They shared a hug, and another one, and another one. Until both Little Yellow and Little Blue were one Big Green!</p>
+                        <p class="sentence" id="sentence01">Little Blue searched and searched when suddenly Little Yellow came around the corner. Little Yellow had been out looking for Little Blue as well. They shared a hug, and another one, and another one. Until both Little Yellow and Little Blue were one Big <a href="#" class="nounclick">Green</a>!</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page04">
                     <div class="container sContainer">
-                        <p class="sentence" id="sentence01">Big Green went home to Mother and Father Blue. But they said: You are green as grass, you are not our Little Blue. Big Green went home to Mother and Father Yellow. But they said: You are green as grass, you not our Little Yellow.</p>
+                        <p class="sentence" id="sentence01">Big Green went home to Mother and Father Blue. But they said: You are green as grass, you are not our Little Blue. Big Green went home to Mother and Father Yellow. But they said: You are green as <a href="#" class="nounclick">grass</a>, you not our Little Yellow.</p>
                     </div>
                 </div>
                 <div class="page col-md-6" id="page05">
                     <div class="container sContainer">
                         <p class="sentence" id="sentence01">Big Green was so so sad. It cried blue en yellow tears. Big Green cried and cried until there was nothing but tears. The tears melted together. Little Blue and Little Yellow were back to normal. Their parents welcomes them back home. Little blue and Little Yellow explained what happened they all hugged each other.</p>
+                    </div>
+                </div>
+                <div class="page col-md-6" id="page06">
+                    <div class="container sContainer">
+                        <p class="sentence" id="sentence01">The End.</p>
                     </div>
                 </div>
             </div>
@@ -65,7 +70,7 @@
 
     </div>
 
-    <!-- View Type Modal -->
+    <!-- View Type Modal On INIT -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -79,6 +84,82 @@
                 <div class="modal-footer">
                     <button id="viewBtn" type="button" class="btn btn-default" data-dismiss="modal">Viewer</button>
                     <button id="readBtn" type="button" class="btn btn-primary" data-dismiss="modal">Reader</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    <!-- Yellow Quiz Modal -->
+    <div class="modal fade" id="yellowQuizModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p class="quizitem" id="yellow"><img src="client/images/yellow-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="orange"><img src="client/images/orange-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="red"><img src="client/images/red-word.jpg" width="200"/></p>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    <!-- House Quiz Modal -->
+    <div class="modal fade" id="houseQuizModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p class="quizitem" id="car"><img src="client/images/car-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="tree"><img src="client/images/tree-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="house"><img src="client/images/house-word.jpg" width="200"/></p>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    <!-- Green Quiz Modal -->
+    <div class="modal fade" id="greenQuizModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p class="quizitem" id="pink"><img src="client/images/pink-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="green"><img src="client/images/green-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="black"><img src="client/images/black-word.jpg" width="200"/></p>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    <!-- Grass Quiz Modal -->
+    <div class="modal fade" id="grassQuizModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Quiz Time <span class="glyphicon glyphicon-heart-empty"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p class="quizitem" id="bugs"><img src="client/images/bugs-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="grass"><img src="client/images/grass-word.jpg" width="200"/></p>
+                    <p class="quizitem" id="sun"><img src="client/images/sun-word.jpg" width="200"/></p>
                 </div>
             </div>
             <!-- /.modal-content -->

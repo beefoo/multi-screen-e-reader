@@ -30,20 +30,12 @@ function handler (req, res) {
 
 io.sockets.on('connection', function (socket) {
     socket.on('pageChange', function (data) {
-        console.log(data.pageNumber);
-        console.log("Emitting Page Change");
         io.sockets.emit('pageChange', {"pageNumber": data.pageNumber});
     });
     socket.on('invokeQuiz', function (data) {
-        console.log(data);
-        io.sockets.emit('data', {
-            pageNumber: data.pageNumber
-        });
+        io.sockets.emit('invokeQuiz', {"pageNumber": data.pageNumber});
     });
     socket.on('quizFinished', function (data) {
-        console.log(data);
-        socket.emit('data', {
-            pageNumber: data.pageNumber
-        });
+        io.sockets.emit('quizFinished', {"success": data.success});
     });
 });

@@ -12,7 +12,7 @@ $(function(){
     ///////////////////////////////////////////////////
     // connect to the socket
     ///////////////////////////////////////////////////
-    var socket = io.connect('http://192.168.1.113:8080');
+    var socket = io.connect('http://10.176.35.207:8080');
     
     ///////////////////////////////////////////////////
     // keep the ID of the Page to display
@@ -24,7 +24,7 @@ $(function(){
     // TODO: Keep this in the server in Mongo or something that persists
     // TODO: Support multiple viewers to create team games
     ///////////////////////////////////////////////////
-    var states = ["cover", "page01", "page02", "page03", "page04", "page05"];
+    var states = ["cover", "page01", "page02", "page03", "page04", "page05", "page06"];
     
     ///////////////////////////////////////////////////
     // a custom object to store all methods not bound to UI events
@@ -63,21 +63,42 @@ $(function(){
     });
     // change the page coming from the server
     socket.on('pageChange', function(data) {
+        state = data.pageNumber;
         if(view == "viewer"){
             methods.changePage(data.pageNumber);
         }
     });
     // TODO: Implement this method on Server from button click
     socket.on('invokeQuiz', function(data) {
-        console.log(data);
-        methods.triggerQuiz();
+        if(view == "viewer"){
+            methods.showQuiz();
+        }
     });
     // TODO: Implement successful quiz
     // TODO: Implement a place holder for Reader while quiz is in session
     socket.on('quizFinished', function(data) {
-        console.log(data);
-        if(view == "viewer"){
-            socket.emit('quizFinished', {"success":true});
+        console.log("Quiz Finished " + data.success);
+        if(view == "reader"){
+            if(data.success){
+                // create temporary alert
+                $("#alertContainer").html(
+                  '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Success!</strong> Viewer chose the correct answer.</div>'  
+                );
+            }else{
+                // create temporary alert
+                $("#alertContainer").html(
+                  '<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Oops!</strong> Viewer chose an incorrect answer.</div>'  
+                );
+            }
+        }
+    });
+    
+    ///////////////////////////////////////////////////
+    // Word in the text button clicks
+    ///////////////////////////////////////////////////
+    $(".nounclick").bind("click", function(ev) {
+        if(view == "reader"){
+            socket.emit('invokeQuiz', {'pageNumber':state});   
         }
     });
     
@@ -101,8 +122,7 @@ $(function(){
     // trigger a page change and modify control states
     ///////////////////////////////////////////////////
     methods.changePage = function(page){
-        console.log(page);
-        for(var i=0; i<6; i++){
+        for(var i=0; i<7; i++){
             if(i != page){
                 $("#"+states[i]).css("display", "none");
             }
@@ -113,11 +133,11 @@ $(function(){
                 $(".lastPage").css("visibility", "hidden");
                 $(".nextPage").css("visibility", "visible");
             }
-            if(page == 5) {
+            if(page == 6) {
                 $(".lastPage").css("visibility", "visible");
                 $(".nextPage").css("visibility", "hidden");
             }
-            if(page < 5 && page > 0) {
+            if(page < 6 && page > 0) {
                 $(".lastPage").css("visibility", "visible");
                 $(".nextPage").css("visibility", "visible");
             }
@@ -129,26 +149,91 @@ $(function(){
     // the modal shold have a transparent background
     // TODO: keep score in Mongo for stats
     ///////////////////////////////////////////////////
-    methods.triggerQuiz = function(page) {
+    methods.showQuiz = function() {
+        console.log(state);
         // show the quiz based on the page# in a modal  
         switch (state) {
-            case "cover":
+            case 0:
                 break;
-            case "page01":
-                // custom images
-                // custom animation type
-            case "page02":
-                // custom images
-                // custom animation type
-            case "page03":
-                // custom images
-                // custom animation type
-            case "page04":
-                // custom images
-                // custom animation type
-            case "page05":
-                // custom images
-                // custom animation type
+            case 1:
+                $('#yellowQuizModal').modal({"show":true, "backdrop":"static"});
+                break;
+            case 2:
+                $('#houseQuizModal').modal({"show":true, "backdrop":"static"});
+                break;
+            case 3:
+                $('#greenQuizModal').modal({"show":true, "backdrop":"static"});
+                break;
+            case 4:
+                $('#grassQuizModal').modal({"show":true, "backdrop":"static"});
+                break;
+            default:
+                // all types use the same algorithm
+        }
+    }
+    
+    ///////////////////////////////////////////////////
+    // Quiz Answer button clicks
+    ///////////////////////////////////////////////////
+    $(".quizitem").bind("click", function(ev) {
+        if(view == "viewer"){
+           methods.answerQuiz(ev.currentTarget.id);
+        }
+    });
+    
+    ///////////////////////////////////////////////////
+    // Quiz Answer validation
+    ///////////////////////////////////////////////////
+    methods.answerQuiz = function(item) {
+        console.log(state);
+        // show the quiz based on the page# in a modal  
+        switch (state) {
+            case 0:
+                break;
+            case 1:
+                if(item == "yellow") {
+                    // correct answer
+                    socket.emit('quizFinished', {'success':true});
+                    $('#yellowQuizModal').modal('toggle');
+                }else{
+                    // incorrect answer
+                    socket.emit('quizFinished', {'success':false});
+                    $("#"+item).css("visibility", "hidden");
+                }
+                break;
+            case 2:
+                if(item == "house") {
+                    // correct answer
+                    socket.emit('quizFinished', {'success':true});
+                    $('#houseQuizModal').modal('toggle');
+                }else{
+                    // incorrect answer
+                    socket.emit('quizFinished', {'success':false});
+                    $("#"+item).css("visibility", "hidden");
+                }
+                break;
+            case 3:
+                if(item == "green") {
+                    // correct answer
+                    socket.emit('quizFinished', {'success':true});
+                    $('#greenQuizModal').modal('toggle');
+                }else{
+                    // incorrect answer
+                    socket.emit('quizFinished', {'success':false});
+                    $("#"+item).css("visibility", "hidden");
+                }
+                break;
+            case 4:
+                if(item == "grass") {
+                    // correct answer
+                    socket.emit('quizFinished', {'success':true});
+                    $('#grassQuizModal').modal('toggle');
+                }else{
+                    // incorrect answer
+                    socket.emit('quizFinished', {'success':false});
+                    $("#"+item).css("visibility", "hidden");
+                }
+                break;
             default:
                 // all types use the same algorithm
         }
