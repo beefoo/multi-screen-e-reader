@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Demo</title>
+    <title>See and Read</title>
     <!-- Bootstrap -->
     <link href="client/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap -->
@@ -13,42 +13,57 @@
 </head>
 
 <body>
+    
+<!-- Main Container for centering -->
+<div class="container" id="wrapper">
+    
+<!-- Last Page button -->
+    <button type="button" class="btn btn-link lastPage pgbtn">
+        <span class="glyphicon glyphicon-chevron-left">
+        </span>
+    </button>
+    
+<!--  All the pages of the book  -->
     <div class="container" id="pages">
         <div class="row">
+            <div class="page col-md-6" id="cover">
+            </div>
             <div class="page col-md-6" id="page01">
-                <p class="sentence" id="sentence01"></p>
-                <p class="sentence" id="sentence01"></p>
-                <p class="sentence" id="sentence01"></p>
+                <div class="container sContainer">
+                    <p class="sentence" id="sentence01">Little Blue has a lot of friends. Little Orange, Little Green, Little Purple and Little Red. But his very best friend is Little <a href="#" class="nounclick">Yellow</a> who lives across the street.</p>
+                </div>
             </div>
             <div class="page col-md-6" id="page02">
-                <p class="sentence" id="sentence01"></p>
-                <p class="sentence" id="sentence01"></p>
-                <p class="sentence" id="sentence01"></p>
+                <div class="container sContainer">
+                    <p class="sentence" id="sentence01">Little Blue and Little Yellow like playing in the park, on the school playground and in their back yards. Their favourite game is hide and seek. One day Little Blue was left alone at home. He went across the street but Yellow's house was empty.  Mother Yellow was out, Father Yellow was out and even Little Yellow was not home.</p>
+                </div>
             </div>
             <div class="page col-md-6" id="page03">
-                <p class="sentence" id="sentence01"></p>
-                <p class="sentence" id="sentence01"></p>
-                <p class="sentence" id="sentence01"></p>
+                <div class="container sContainer">
+                    <p class="sentence" id="sentence01">Little Blue searched and searched when suddenly Little Yellow came around the corner. Little Yellow had been out looking for Little Blue as well. They shared a hug, and another one, and another one.  Until both Little Yellow and Little Blue were one Big Green!</p>
+                </div>
+            </div>
+            <div class="page col-md-6" id="page04">
+                <div class="container sContainer">
+                    <p class="sentence" id="sentence01">Big Green went home to Mother and Father Blue. But they said: You are green as grass, you are not our Little Blue. Big Green went home to Mother and Father Yellow. But they said: You are green as grass, you not our Little Yellow.</p>
+                </div>
+            </div>
+            <div class="page col-md-6" id="page05">
+                <div class="container sContainer">
+                    <p class="sentence" id="sentence01">Big Green was so so sad. It cried blue en yellow tears. Big Green cried and cried until there was nothing but tears. The tears melted together. Little Blue and Little Yellow were back to normal. Their parents welcomes them back home. Little blue and Little Yellow explained what happened they all hugged each other.</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container pagebtns">
-        <div class="row">
-            <div class="col-md-1 lastPage">
-                <button type="button" class="btn btn-default">
-                    <span class="glyphicon glyphicon-chevron-left">
-                    </span> Last
-                </button>
-            </div>
-            <div class="col-md-9"></div>
-            <div class="col-md-1 nextPage">
-                <button type="button" class="btn btn-default">Next 
-                    <span class="glyphicon glyphicon-chevron-right">
-                    </span>
-                </button>
-            </div>
-        </div>
-    </div>
+    
+<!--  Next Page button  -->
+    <button type="button" class="btn btn-link nextPage pgbtn">
+        <span class="glyphicon glyphicon-chevron-right">
+        </span>
+    </button>
+    
+</div>  
+    
     <script type="text/javascript" src="client/js/jquery.js"></script>
     <script type="text/javascript" src="client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="client/js/script.js"></script>

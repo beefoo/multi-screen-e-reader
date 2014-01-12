@@ -1,32 +1,75 @@
-body {
-	background:gray;
+html{
+    height:100%;    
+}
+body{
+	background:url('http://www.diaryofaninja.com/asset/blogimages/7c399b32-bd0e-41e5-a6de-ab0b1023f2ed_WoodBackground_thumb_2.png');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+#wrapper{
+   width:800px;
+    margin-top:20px;
+}
+#pages {
+    float:left;
+    width:600px;
+    display:block;
+    box-shadow:0px 2px 2px 2px;
+}
+.container{
+    margin:0 auto;
+    height:800px;
+}
+#cover {
+	background:url("../images/cover.jpg");
+     display:none;
 }
 .page {
-	position:absolute;
-	top:0px;
-	left:0px;
+    display:block;
 	width:600px;
 	height:800px;
 	color:white;
+    margin:0;
+    padding:0;
 }
-.container{
-    position:absolute;
-    margin:0 auto;
-    width:600px;
-    top:0px;
-	left:0px;
+.pgbtn{
+    float:left;
+    height:800px;
+    width:50px;
+    box-shadow:2px;
 }
+
 #page01 {
 	background:url("../images/page01.jpg");
+     display:none;
 }
 #page02 {
 	background:url("../images/page02.jpg");
+    display:none;
 }
 #page03 {
 	background:url("../images/page03.jpg");
+    display:none;
 }
-
-.pagebtns{
-    padding:0 15px;  
-    margin-top:15px;
+#page04 {
+	background:url("../images/page04.jpg");
+    display:none;
+}
+#page05 {
+	background:url("../images/page05.jpg");
+    display:none;
+}
+.sentence {
+    color:#000;   
+}
+.sentence p {
+    padding:0px;   
+}
+.sContainer {
+    position:absolute;
+    top:500px;
+    padding:20px;
+    word-wrap:break-word;
+    width:600px;
+    height:auto;
 }
