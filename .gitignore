@@ -6,3 +6,6 @@
 
 # OSX
 .DS_Store
+
+.project
+/_dev
